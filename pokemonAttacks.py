@@ -1,3 +1,5 @@
+from pokemonClassesAndTypes import *
+
 vineWhip = Attack(
     22,
     "physical",

@@ -1,8 +1,7 @@
 import random
-import * from pokemonClasses
-import * from pokemonTypes
-import * from pokemonAttacks
-import * from pokemonPokemons
+from pokemonClassesAndTypes import *
+from pokemonAttacks import *
+from pokemonPokemons import *
 
 pokemonTotal = [charmander,bulbasaur, squirtle, caterpie]
 playerPokemonTotal = []

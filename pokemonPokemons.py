@@ -1,3 +1,6 @@
+from pokemonAttacks import *
+from pokemonClassesAndTypes import *
+
 bulbasaurBaseStats = BaseStats(
     45,
     49,
