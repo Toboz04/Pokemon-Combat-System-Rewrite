@@ -14,6 +14,6 @@ Due to time constraints (and also me being stupid lol) the code has still a few 
 
 Basically there are 4 starter *Pokemons* with 4 attacks each (a few of them are placeholders like the *Poison Powder* attack).
 
-  ![Pokemon Starter Pick]()
+  ![Pokemon Starter Pick](PokemonStarterPick.png)
 
 You start by choosing two of those four (your opponent receives the remaining *Pokemons*). Afterwards the fight starts and the first turn is decided by the *Pokemons* **speed** stat. You can either attack or switch *Pokemons* and the rest works like a standard *Pokemon* fight
