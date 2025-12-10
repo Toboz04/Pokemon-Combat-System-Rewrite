@@ -24,6 +24,7 @@ bulbasaur = Pokemon(
     bulbasaurBaseStats,
     bulbasaurBaseStats.hp,
     attacks=[vineWhip, razorLeaf, tackle, poisonPowder],
+    currentpp = [vineWhip.pp, razorLeaf.pp, tackle.pp, poisonPowder.pp],
     statusalignments = []
 )
 
@@ -51,6 +52,7 @@ charmander = Pokemon(
     charmanderBaseStats,
     charmanderBaseStats.hp,
     attacks=[scratch, ember, tackle, poisonPowder],
+    currentpp = [scratch.pp, ember.pp, tackle.pp, poisonPowder.pp],
     statusalignments = []
 )
 
@@ -77,6 +79,7 @@ squirtle = Pokemon(
     squirtleBaseStats,
     squirtleBaseStats.hp,
     attacks=[waterGun, tackle, scratch, poisonPowder],
+    currentpp = [waterGun.pp, tackle.pp, scratch.pp, poisonPowder.pp],
     statusalignments = []
 )
 
@@ -103,5 +106,6 @@ caterpie = Pokemon(
     caterpieBaseStats,
     caterpieBaseStats.hp,
     attacks = [tackle, bugBite, scratch, poisonPowder],
+    currentpp = [tackle.pp, bugBite.pp, scratch.pp, poisonPowder.pp],
     statusalignments = []
 )

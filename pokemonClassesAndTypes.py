@@ -1,7 +1,7 @@
 import random
 
 class Pokemon:
-    def __init__(self, id, name, species, description, type1, type2, height, weight, image, critchance, rarity, basestats, currenthp, attacks, statusalignments):
+    def __init__(self, id, name, species, description, type1, type2, height, weight, image, critchance, rarity, basestats, currenthp, attacks, currentpp, statusalignments):
         self.id = int(id)
         self.name = str(name)
         self.species = str(species)
@@ -16,6 +16,7 @@ class Pokemon:
         self.basestats = basestats
         self.currenthp = int(currenthp)
         self.attacks = list(attacks)
+        self.currentpp = list(currentpp)
         self.statusalignments = list(statusalignments)
         
     def p_attack(self, attack, attackingpokemon, defendingpokemon):
