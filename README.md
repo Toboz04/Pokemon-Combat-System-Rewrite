@@ -1,10 +1,10 @@
 # What is the point of this repository?
 
-This repository focuses on rewriting my previous project and making it more readable 
+This repository focuses on rewriting my previous project and making it more readable but also to get more familiar with git (and GitHub).  
 
 # What was my previous project?
 
-My previous project was a ***work*** related taks where i needed to programm a functioning *Pokemon* combat system to get more familiar with OOP. The *game* is console only and therefore has no GUI (which is a result of the project lasting only 3 1/2 days)
+My previous project was a ***work*** related task where i needed to programm a functioning *Pokemon* combat system to get more familiar with OOP. The *game* is console only and therefore has no GUI (which is a result of the project lasting only 3 1/2 days)
 
 # What needs to be rewritten?
 
