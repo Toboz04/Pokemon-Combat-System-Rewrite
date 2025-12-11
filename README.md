@@ -18,6 +18,9 @@ Basically there are 4 starter *Pokemons* with 4 attacks each (a few of them are 
 
 You start by choosing two of those four (your opponent receives the remaining *Pokemons*). Afterwards the fight starts and the first turn is decided by the *Pokemons* **speed** stat. You can either attack or switch *Pokemons* and the rest works like a standard *Pokemon* fight
 
+# What has been changed?
+
+
 ## Splitting `pokemon.py` into mulitple files
 
 A good half of code consisted of `class` and `object` declarations so it made sense to split them into seperate files for better readability. 
