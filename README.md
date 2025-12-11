@@ -71,7 +71,7 @@ I am not a fan of this method but i couldn't figure out a different solution (al
 
 ## Fixing the PowerPoints system bug
 
-**PowerPoints** (or **PP** for short (*very funny Clyde, i know*)) are an `integer` value which represent the amount of times you can use a specific attack. In the original `pokemon.py` programm this system had issues with transferring **PPs** through each *Pokemon* in your roster, meaning if you switched your *Pokemon* mid fight your new *Pokemons* **PPs** would have the same amount of **PPs** as your previous *Pokemon*. To fix this i used the same method for storing each *Pokemons* **HP** by (re-)assigning and keeping the value inside the `object`.
+**PowerPoints** (or **PP** for short (*very funny Clyde, i know*)) are an `integer` value which represent the amount of times you can use a specific attack. In the original `pokemon.py` programm this system had issues with transferring **PPs** through each *Pokemon* in your roster, meaning if you switched your *Pokemon* mid fight your new *Pokemons* **PPs** would have the same amount of **PPs** as your previous *Pokemon*. To fix this i used the same method for storing each *Pokemons* **HP** by (re-)assigning and keeping the value inside their respective `object`.
 
 ```python
 squirtle = Pokemon(
