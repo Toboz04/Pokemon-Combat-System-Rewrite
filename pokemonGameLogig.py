@@ -43,6 +43,11 @@ def playerPokemonPick():
 
 
 def opponentAttackChoice():
+    global opponentPokemonPP1
+    global opponentPokemonPP2
+    global opponentPokemonPP3
+    global opponentPokemonPP4
+    
     while True:
         opponentAttack = random.choice(opponentPokemon.attacks)
         if opponentAttack == opponentPokemon.attacks[0]:
@@ -72,6 +77,11 @@ def opponentAttackChoice():
     return opponentAttack
 
 def playerAttackDecision():
+    global playerPokemonPP1
+    global playerPokemonPP2
+    global playerPokemonPP3
+    global playerPokemonPP4
+    
     while True:
         try:
             playerAttackInput = int(input(f"\nChoose an attack!\n(0){playerPokemon.attacks[0].name}"
@@ -136,6 +146,8 @@ def checkOpponentAlive():
 
 
 def opponentStatusAlignment():
+    global opponentPokemonHP
+    global opponentPokemonAlive
     for opponentPokemonStatus in opponentPokemon.statusalignments:
         if int(opponentPokemonStatus.dpr * opponentPokemon.basestats.hp) < 1:
             opponentPokemonHP -= 1
@@ -150,6 +162,9 @@ def opponentStatusAlignment():
             return opponentPokemonAlive
 
 def playerStatusAlignment():
+    global playerPokemonHP
+    global playerPokemonAlive
+
     for playerPokemonStatus in playerPokemon.statusalignments:
         if int(playerPokemonStatus.dpr * playerPokemon.basestats.hp) < 1:
             playerPokemonHP -= 1
@@ -167,6 +182,11 @@ def playerStatusAlignment():
 
       
 def opponentTurn():
+    global opponentPokemon
+    global opponentPokemonHP
+    global playerPokemon
+    global playerPokemonHP
+
     opponentAttack = opponentAttackChoice()
     opponentMissCalculator = random.randint(0, 100)
     if opponentMissCalculator > opponentAttack.accuracy:
@@ -185,6 +205,30 @@ def opponentTurn():
                 return opponentPokemonAlive
                 
 def playerTurn():
+    global playerPokemon
+    global playerPokemonHP
+    global opponentPokemon
+    global opponentPokemonHP
+
+    global playerPokemonPP1
+    global playerPokemonPP2
+    global playerPokemonPP3
+    global playerPokemonPP4
+
+    global playerPokemonAlive
+    global opponentPokemonAlive
+
+    if len(playerPokemon.statusalignments) > 0:
+        print(f"\nYou: {playerPokemon.name} {playerPokemonHP}/{playerPokemon.basestats.hp}HP "
+              f"{playerPokemon.statusalignments[0].name}")
+    else:
+        print(f"\nYou: {playerPokemon.name} {playerPokemonHP}/{playerPokemon.basestats.hp}HP")
+    if len(opponentPokemon.statusalignments) > 0:
+        print(f"Opponent: {opponentPokemon.name} {opponentPokemonHP}/{opponentPokemon.basestats.hp}HP "
+              f"{opponentPokemon.statusalignments[0].name}")
+    else:
+        print(f"Opponent: {opponentPokemon.name} {opponentPokemonHP}/{opponentPokemon.basestats.hp}HP")
+        
     playerDecisionInput = input(f"(0) Attack\n(1) Switch\n")
     if playerDecisionInput == "1":
         playerPokemon.currenthp = playerPokemonHP
@@ -223,17 +267,6 @@ def playerTurn():
 def combat():
     pokemonAlive = True
     while True:
-        if len(playerPokemon.statusalignments) > 0:
-            print(f"You: {playerPokemon.name} {playerPokemonHP}/{playerPokemon.basestats.hp}HP "
-                  f"{playerPokemon.statusalignments[0].name}")
-        else:
-            print(f"You: {playerPokemon.name} {playerPokemonHP}/{playerPokemon.basestats.hp}HP")
-        if len(opponentPokemon.statusalignments) > 0:
-            print(f"Opponent: {opponentPokemon.name} {opponentPokemonHP}/{opponentPokemon.basestats.hp}HP "
-                    f"{opponentPokemon.statusalignments[0].name}")
-        else:
-            print(f"Opponent: {opponentPokemon.name} {opponentPokemonHP}/{opponentPokemon.basestats.hp}")
-
         if playerPokemon.basestats.speed > opponentPokemon.basestats.speed:
             pokemonAlive = playerTurn()
             if pokemonAlive == False:
@@ -265,40 +298,37 @@ def combat():
                 if pokemonAlive == False:
                     return
 
-
 if __name__ == "__main__":
+
     pokemonTotal = [charmander, bulbasaur, squirtle, caterpie]
     playerPokemonTotal = []
-    
+
     playerPokemonPick()
     opponentPokemonTotal = pokemonTotal
-    
-    print(pokemonTotal)
-    print(playerPokemonTotal)
-    print(opponentPokemonTotal)
 
     playerPokemonAlive = True
     opponentPokemonAlive = True
-    
+
     playerPokemon = playerPokemonTotal[0]
     opponentPokemon = random.choice(opponentPokemonTotal)
 
     playerPokemonHP = playerPokemon.currenthp
     opponentPokemonHP = opponentPokemon.currenthp
-    
+
     playerPokemonPP1 = playerPokemon.currentpp[0]
     playerPokemonPP2 = playerPokemon.currentpp[1]
     playerPokemonPP3 = playerPokemon.currentpp[2]
     playerPokemonPP4 = playerPokemon.currentpp[3]
-    
+
     opponentPokemonPP1 = opponentPokemon.currentpp[0]
     opponentPokemonPP2 = opponentPokemon.currentpp[1]
     opponentPokemonPP3 = opponentPokemon.currentpp[2]
     opponentPokemonPP4 = opponentPokemon.currentpp[3]
-    
+
+
     while True:
         combat()
-        
+
         if playerPokemonAlive:
             opponentPokemonTotal.remove(opponentPokemon)
             if len(opponentPokemonTotal) == 0:
